@@ -6,6 +6,24 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 ps=PorterStemmer()
 
+def download_nltk():
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except:
+        nltk.download('punkt')
+
+    try:
+        nltk.data.find('tokenizers/punkt_tab')
+    except:
+        nltk.download('punkt_tab')
+
+    try:
+        nltk.data.find('corpora/stopwords')
+    except:
+        nltk.download('stopwords')
+
+download_nltk()
+
 
 def transform_mess(message):
     message = message.lower()
